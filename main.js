@@ -20,25 +20,28 @@ else {
 }
 
 
-
-
-//Generare un numero random da 1  a 6, sia per il giocatore sia per il computer
+//Generare un numero random da 1  a 6, sia per il giocatore sia per il computer.
 //Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
 //Player
 var  player  =  ((Math . random ( ) * 5)  +  1) . toFixed ( 0 ) ;
+document.getElementById("player").innerHTML = "Il giocatore ha lanciato "  +  player;
 console.log ("Il giocatore ha lanciato "  +  (player));
 //Computer
 var  computer  =  ((Math . random ( ) * 5)  +  1) . toFixed ( 0 ) ;
+document.getElementById("computer").innerHTML = "Il giocatore ha lanciato "  +  computer;
 console.log ("Il computer ha lanciato "  +  (computer));
 
 //VERIFICA CONDIZIONI DEL GIOCO
 if  (player  >  computer)  {
+    document.getElementById("player-vince").innerHTML = "Player hai vinto !!!" ;
     console.log ("Il giocatore ha vinto");
 }
 else  if  (player  ==  computer)  {
+    document.getElementById("pareggio").innerHTML = "PAREGGIO !" ;
     console.log ("Pari");
 }
 else  {
+    document.getElementById("computer-vince").innerHTML = "Computer vince !!!" ;
     console.log ("Il computer ha vinto");
 }
