@@ -2,22 +2,51 @@
 //controlla che sia nella lista di chi può accedere,
 //stampa un messaggio appropriato sull’esito del controllo.
 
-var emailList = ["gmail","hotmail","yahoo", "outlook"];
-console.log(emailList);
+// var emailList = ["gmail","hotmail","yahoo", "outlook"];
+// console.log(emailList);
 
-var inserisciEmail = prompt ("Inserisci la tua email");
-console.log(inserisciEmail);
+// var inserisciEmail = prompt ("Inserisci la tua email");
+// console.log(inserisciEmail);
 
-//verifica email che hanno accesso e quelle che non lo sono 
-if (inserisciEmail == (emailList[0]) || inserisciEmail == (emailList[1]) || inserisciEmail == (emailList[2]) || inserisciEmail == (emailList[3])) {
-    console.log("Benvenuto");
-    alert("Benvenuto");
-    document.getElementById("text-1").innerHTML = "Benvenuto Utente " + inserisciEmail;
+// //verifica email che hanno accesso e quelle che non lo sono 
+// if (inserisciEmail == (emailList[0]) || inserisciEmail == (emailList[1]) || inserisciEmail == (emailList[2]) || inserisciEmail == (emailList[3])) {
+//     console.log("Benvenuto");
+//     alert("Benvenuto");
+//     document.getElementById("text-1").innerHTML = "Benvenuto Utente " + inserisciEmail;
+// }
+// else {
+//     alert("Non sei abilitato all'accesso");
+//     document.getElementById("text-2").innerHTML = "Accesso negato";
+// }
+
+//Devo chiedere la mail tramite prompt
+var emailUtente = prompt("Inserisci a tua mail");
+//console.log(emailUtente);
+
+var listEmails = ["gmail","hotmail","yahoo", "outlook"];
+//console.log (listEmails);
+
+//Verifico se la mail è inclusa nella mia lista
+var mailTrovata = false;
+
+for (var i = 0; i < listEmails.length; i++) {  // controlla se la mail è inclusa nella lista 
+    if (emailUtente == listEmails[i])
+    {
+        mailTrovata = true;   
+    }
+}
+//Stampo il messaggio appropriato (se inclusa "autorizzato", altrimenti "non autorizzato")
+if (mailTrovata == true) {
+    alert("Sei autorizzato");
+    document.getElementById("text-1").innerHTML = "Benvenuto Utente " + emailUtente;
 }
 else {
-    alert("Non sei abilitato all'accesso");
+    alert("Non sei autorizzato");
     document.getElementById("text-2").innerHTML = "Accesso negato";
 }
+
+
+
 
 
 //Generare un numero random da 1  a 6, sia per il giocatore sia per il computer.
